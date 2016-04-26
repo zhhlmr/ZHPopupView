@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlp-BH-rLi">
+                                <rect key="frame" x="241" y="136" width="118" height="30"/>
+                                <state key="normal" title="Popup Alert View"/>
+                                <connections>
+                                    <action selector="pressedOnAlertViewPopup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WRI-la-4vD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0s-Bp-Ki6">
+                                <rect key="frame" x="236" y="174" width="129" height="30"/>
+                                <state key="normal" title="Popup Dialog View"/>
+                                <connections>
+                                    <action selector="pressedOnDialogViewPopup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fz8-ok-mgc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUG-dZ-G19">
+                                <rect key="frame" x="165" y="232" width="271" height="30"/>
+                                <state key="normal" title="Popup Alert View With Blur Background"/>
+                                <connections>
+                                    <action selector="pressedOnBlurAlertViewPopup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cum-Fd-JHu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hu-jF-dov">
+                                <rect key="frame" x="159" y="279" width="282" height="30"/>
+                                <state key="normal" title="Popup Dialog View With Blur Background"/>
+                                <connections>
+                                    <action selector="pressedOnBlurDialogViewPopup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="phO-Py-7im"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZHPopupView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQF-8o-wjp">
+                                <rect key="frame" x="20" y="66" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RQF-8o-wjp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5r3-3A-nG0"/>
+                            <constraint firstItem="PUG-dZ-G19" firstAttribute="top" secondItem="R0s-Bp-Ki6" secondAttribute="bottom" constant="28" id="AdG-tT-6yJ"/>
+                            <constraint firstItem="RQF-8o-wjp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="46" id="Ix9-cx-LXw"/>
+                            <constraint firstItem="PUG-dZ-G19" firstAttribute="centerX" secondItem="R0s-Bp-Ki6" secondAttribute="centerX" id="P9E-w1-nBh"/>
+                            <constraint firstItem="R0s-Bp-Ki6" firstAttribute="centerX" secondItem="nlp-BH-rLi" secondAttribute="centerX" id="auj-7x-vqa"/>
+                            <constraint firstItem="4Hu-jF-dov" firstAttribute="top" secondItem="PUG-dZ-G19" secondAttribute="bottom" constant="17" id="ceW-4E-XmK"/>
+                            <constraint firstItem="nlp-BH-rLi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d8g-uk-E17"/>
+                            <constraint firstItem="4Hu-jF-dov" firstAttribute="centerX" secondItem="PUG-dZ-G19" secondAttribute="centerX" id="g5O-iT-ok7"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="RQF-8o-wjp" secondAttribute="leading" id="id2-jV-f7u"/>
+                            <constraint firstItem="R0s-Bp-Ki6" firstAttribute="top" secondItem="nlp-BH-rLi" secondAttribute="bottom" constant="8" id="ker-t6-Hwf"/>
+                            <constraint firstItem="nlp-BH-rLi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="116" id="l77-nz-rMU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163" y="415"/>
+        </scene>
+    </scenes>
+</document>
