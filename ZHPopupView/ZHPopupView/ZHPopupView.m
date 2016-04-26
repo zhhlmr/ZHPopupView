@@ -1,9 +1,9 @@
 //
 //  ZHPopupView.m
-//  TestPopUpView
+//  ZHPopupView
 //
-//  Created by heyz3a on 16/4/25.
-//  Copyright © 2016年 heyz3a. All rights reserved.
+//  Created by zhhlmr on 16/4/25.
+//  Copyright © 2016年 zhhlmr. All rights reserved.
 //
 
 #import "ZHPopupView.h"
@@ -507,8 +507,6 @@
 
 - (void)_configureBackgroundBlur {
     //structure view
-
-
     UIGraphicsBeginImageContext(self.parentView.frame.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self.parentView.layer renderInContext:context];
@@ -529,7 +527,6 @@
 - (void)_createView {
 
     [self.layer setOpacity:0.0f];
-
 
     if (self.backgroundType == ZHPopupViewBackgroundType_SimpleOpacity) {
         self.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];

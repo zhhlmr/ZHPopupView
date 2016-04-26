@@ -1,9 +1,9 @@
 //
 //  ZHPopupView.h
-//  TestPopUpView
+//  ZHPopupView
 //
-//  Created by heyz3a on 16/4/25.
-//  Copyright © 2016年 heyz3a. All rights reserved.
+//  Created by zhhlmr on 16/4/25.
+//  Copyright © 2016年 zhhlmr. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -18,20 +18,20 @@ typedef enum {
 @interface ZHPopupView : UIView
 
 
-@property(nonatomic, strong) NSString *headTitle;
-@property(nonatomic, strong) NSString *content;
-@property(nonatomic, strong) UIImage *headIconImg;
+@property(nonatomic, strong) NSString *headTitle;// Title string
+@property(nonatomic, strong) NSString *content; // Content String
+@property(nonatomic, strong) UIImage *headIconImg; // head Icon Img
 
-@property(nonatomic, strong) UIColor *headTitleColor;
-@property(nonatomic, strong) UIColor *contentTextColor;
+@property(nonatomic, strong) UIColor *headTitleColor; // Title Color
+@property(nonatomic, strong) UIColor *contentTextColor; // Content Text Color
 
-@property(nonatomic, assign) CGFloat headTitleFontSize;
-@property(nonatomic, assign) CGFloat contentTextFontSize;
+@property(nonatomic, assign) CGFloat headTitleFontSize;// Title font size
+@property(nonatomic, assign) CGFloat contentTextFontSize;// Content font size
 
-@property(nonatomic, assign) NSTextAlignment contentTextAlignment;
-@property(nonatomic, assign) NSTextAlignment headTextAlignment;
+@property(nonatomic, assign) NSTextAlignment contentTextAlignment;// Content text Alignment
+@property(nonatomic, assign) NSTextAlignment headTextAlignment; // Title Text Alignment
 
-@property(nonatomic, copy) void (^buttonPressedBlock)(NSInteger btnIdx);
+@property(nonatomic, copy) void (^buttonPressedBlock)(NSInteger btnIdx); // Button Click/Pressed callback
 
 
 + (instancetype)popupViewInView:(UIView *)view;
