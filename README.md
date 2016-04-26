@@ -9,7 +9,7 @@ A simple iOS Pop up View to display alert or dialog
 ### Usage
 
 
-- ###### Alert View
+###### Alert View
 
 ```
 ZHPopupView *popupView = [ZHPopupView popupNomralAlertViewInView:nil
@@ -25,7 +25,7 @@ ZHPopupView *popupView = [ZHPopupView popupNomralAlertViewInView:nil
 [popupView present];
 ```
 
-- ###### Dialog View
+###### Dialog View
 
 ```
 ZHPopupView *popupView = [ZHPopupView popUpDialogViewInView:nil
