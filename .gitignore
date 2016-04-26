@@ -51,3 +51,9 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+.idea/encodings.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/xcode.xml
+.idea/ZHPopupView.iml
