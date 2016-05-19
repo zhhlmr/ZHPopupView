@@ -1,10 +1,10 @@
 # ZHPopupView
 
+
 [![CI Status](http://img.shields.io/travis/zhhlmr/ZHPopupView.svg?style=flat)](https://travis-ci.org/zhhlmr/ZHPopupView)
 [![Version](https://img.shields.io/cocoapods/v/ZHPopupView.svg?style=flat)](http://cocoapods.org/pods/ZHPopupView)
 [![License](https://img.shields.io/cocoapods/l/ZHPopupView.svg?style=flat)](http://cocoapods.org/pods/ZHPopupView)
 [![Platform](https://img.shields.io/cocoapods/p/ZHPopupView.svg?style=flat)](http://cocoapods.org/pods/ZHPopupView)
-
 
 
 A simple iOS Pop up View to display alert or dialog
@@ -21,6 +21,7 @@ A simple iOS Pop up View to display alert or dialog
 
 ```
 ZHPopupView *popupView = [ZHPopupView popupNomralAlertViewInView:nil
+<<<<<<< HEAD
 backgroundStyle:ZHPopupViewBackgroundType_SimpleOpacity
 title:@"Tips"
 content:@"Confirm to delete/remove?"
@@ -85,13 +86,13 @@ buttonPressedBlock:^(NSInteger btnIdx) {
 ```
 
 typedef enum {
-ZHPopupViewBackgroundType_SimpleOpacity = 0, // Default
-ZHPopupViewBackgroundType_Blur = 1 // With Radius 10.0f , will adding setting property about blur effect
+
+    ZHPopupViewBackgroundType_SimpleOpacity = 0, // Default
+    ZHPopupViewBackgroundType_Blur = 1 // With Radius 10.0f , will adding setting property about blur effect
 
 } ZHPopupViewBackgroundType;
 
 ```
-
 
 ## Example
 
@@ -115,3 +116,4 @@ pod "ZHPopupView"
 ## License
 
 ZHPopupView is available under the MIT license. See the LICENSE file for more info.
+
