@@ -21,16 +21,15 @@ A simple iOS Pop up View to display alert or dialog
 
 ```
 ZHPopupView *popupView = [ZHPopupView popupNomralAlertViewInView:nil
-<<<<<<< HEAD
-backgroundStyle:ZHPopupViewBackgroundType_SimpleOpacity
-title:@"Tips"
-content:@"Confirm to delete/remove?"
-buttonTitles:@[@"Cancel", @"Confirm"]
-confirmBtnTextColor:nil otherBtnTextColor:nil
-buttonPressedBlock:^(NSInteger btnIdx) {
+                                                 backgroundStyle:ZHPopupViewBackgroundType_SimpleOpacity
+                                                           title:@"Tips"
+                                                         content:@"Confirm to delete/remove?"
+                                                    buttonTitles:@[@"Cancel", @"Confirm"]
+                                             confirmBtnTextColor:nil otherBtnTextColor:nil
+                                              buttonPressedBlock:^(NSInteger btnIdx) {
 
 
-}];
+                                              }];
 [popupView present];
 ```
 
@@ -38,16 +37,16 @@ buttonPressedBlock:^(NSInteger btnIdx) {
 
 ```
 ZHPopupView *popupView = [ZHPopupView popUpDialogViewInView:nil
-iconImg:[UIImage imageNamed:@"correct_icon"]
-backgroundStyle:ZHPopupViewBackgroundType_SimpleOpacity
-title:@"Lorem Ipsum"
-content:kRandomText
-buttonTitles:@[@"Cancel", @"Confirm"]
-confirmBtnTextColor:nil otherBtnTextColor:nil
-buttonPressedBlock:^(NSInteger btnIdx) {
+                                                    iconImg:[UIImage imageNamed:@"correct_icon"]
+                                            backgroundStyle:ZHPopupViewBackgroundType_SimpleOpacity
+                                                      title:@"Lorem Ipsum"
+                                                    content:kRandomText
+                                               buttonTitles:@[@"Cancel", @"Confirm"]
+                                        confirmBtnTextColor:nil otherBtnTextColor:nil
+                                         buttonPressedBlock:^(NSInteger btnIdx) {
 
 
-}];
+                                         }];
 [popupView present];
 
 ```
@@ -116,4 +115,3 @@ pod "ZHPopupView"
 ## License
 
 ZHPopupView is available under the MIT license. See the LICENSE file for more info.
-
