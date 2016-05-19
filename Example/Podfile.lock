@@ -1,0 +1,16 @@
+PODS:
+  - ZHPopupView (0.1.0)
+
+DEPENDENCIES:
+  - ZHPopupView (from `../`)
+
+EXTERNAL SOURCES:
+  ZHPopupView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ZHPopupView: a6922951d4ecb74b892526163f71b1b2c80a04ed
+
+PODFILE CHECKSUM: 9652c77ce39b6da427b02414d6654819a56edddd
+
+COCOAPODS: 1.0.0

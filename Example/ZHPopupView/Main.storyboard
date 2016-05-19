@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Popup View View Controller-->
         <scene sceneID="wQg-tq-qST">
             <objects>
                 <viewController id="whP-gf-Uak" customClass="ZHPopupViewViewController" sceneMemberID="viewController">
@@ -14,14 +14,55 @@
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdv-Cj-t2P">
+                                <rect key="frame" x="129" y="176" width="118" height="30"/>
+                                <state key="normal" title="Popup Alert View"/>
+                                <connections>
+                                    <action selector="pressedOnAlertViewPopup:" destination="whP-gf-Uak" eventType="touchUpInside" id="j7g-hB-KGi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffv-y8-tPU">
+                                <rect key="frame" x="124" y="214" width="129" height="30"/>
+                                <state key="normal" title="Popup Dialog View"/>
+                                <connections>
+                                    <action selector="pressedOnDialogViewPopup:" destination="whP-gf-Uak" eventType="touchUpInside" id="WVW-oZ-Z8o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAs-Zt-vDq">
+                                <rect key="frame" x="53" y="272" width="271" height="30"/>
+                                <state key="normal" title="Popup Alert View With Blur Background"/>
+                                <connections>
+                                    <action selector="pressedOnBlurAlertViewPopup:" destination="whP-gf-Uak" eventType="touchUpInside" id="unk-S7-4qt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUa-gF-Tkw">
+                                <rect key="frame" x="47" y="319" width="282" height="30"/>
+                                <state key="normal" title="Popup Dialog View With Blur Background"/>
+                                <connections>
+                                    <action selector="pressedOnBlurDialogViewPopup:" destination="whP-gf-Uak" eventType="touchUpInside" id="6c8-Ta-8q5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ffv-y8-tPU" firstAttribute="top" secondItem="bdv-Cj-t2P" secondAttribute="bottom" constant="8" id="0Ry-b0-NO2"/>
+                            <constraint firstItem="hUa-gF-Tkw" firstAttribute="centerX" secondItem="PAs-Zt-vDq" secondAttribute="centerX" id="Erg-To-Xu6"/>
+                            <constraint firstItem="hUa-gF-Tkw" firstAttribute="top" secondItem="PAs-Zt-vDq" secondAttribute="bottom" constant="17" id="GXb-Pf-3wh"/>
+                            <constraint firstItem="hUa-gF-Tkw" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="OQm-Ff-rch"/>
+                            <constraint firstItem="Ffv-y8-tPU" firstAttribute="centerX" secondItem="bdv-Cj-t2P" secondAttribute="centerX" id="UoX-EF-KzH"/>
+                            <constraint firstItem="PAs-Zt-vDq" firstAttribute="top" secondItem="Ffv-y8-tPU" secondAttribute="bottom" constant="28" id="aMT-k7-xl9"/>
+                            <constraint firstItem="PAs-Zt-vDq" firstAttribute="centerX" secondItem="Ffv-y8-tPU" secondAttribute="centerX" id="e2L-kJ-FhP"/>
+                            <constraint firstItem="bdv-Cj-t2P" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="zwI-db-TSX"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="146.5" y="261.5"/>
         </scene>
     </scenes>
 </document>
