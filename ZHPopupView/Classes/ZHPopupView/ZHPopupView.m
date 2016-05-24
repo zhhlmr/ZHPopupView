@@ -98,6 +98,32 @@
     return popView;
 }
 
++ (instancetype)popUpDialogViewInView:(UIView *)view
+                              iconImg:(UIImage *)iconImg
+                      backgroundStyle:(ZHPopupViewBackgroundType)backgroundType
+                                title:(NSString *)title
+                              content:(NSString *)content
+                         buttonTitles:(NSArray *)titles
+                  confirmBtnTextColor:(UIColor *)confirmBtnTextColor
+                    otherBtnTextColor:(UIColor *)otherBtnTextColor
+                   buttonPressedBlock:(void (^)(NSInteger btnIdx))buttonPressedBlock
+                   viewDismissedBlock:(void (^)())viewDismissedBlock
+{
+    ZHPopupView *popView = [ZHPopupView popUpDialogViewInView:view
+                                                      iconImg:iconImg
+                                              backgroundStyle:backgroundType
+                                                        title:title
+                                                      content:content
+                                                 buttonTitles:titles
+                                          confirmBtnTextColor:confirmBtnTextColor
+                                            otherBtnTextColor:otherBtnTextColor
+                                           buttonPressedBlock:buttonPressedBlock];
+    
+    [popView setViewDismissedBlock:viewDismissedBlock];
+    
+    return popView;
+}
+
 + (instancetype)popupNomralAlertViewInView:(UIView *)view backgroundStyle:(ZHPopupViewBackgroundType)backgroundType title:(NSString *)title content:(NSString *)content buttonTitles:(NSArray *)titles confirmBtnTextColor:(UIColor *)confirmBtnTextColor otherBtnTextColor:(UIColor *)otherBtnTextColor buttonPressedBlock:(void (^)(NSInteger btnIdx))buttonPressedBlock {
 
     view = (nil == view) ? [UIApplication sharedApplication].keyWindow : view;
@@ -118,6 +144,30 @@
 
     return popView;
 
+}
+
++ (instancetype)popupNomralAlertViewInView:(UIView *)view
+                           backgroundStyle:(ZHPopupViewBackgroundType)backgroundType
+                                     title:(NSString *)title
+                                   content:(NSString *)content
+                              buttonTitles:(NSArray *)titles
+                       confirmBtnTextColor:(UIColor *)confirmBtnTextColor
+                         otherBtnTextColor:(UIColor *)otherBtnTextColor
+                        buttonPressedBlock:(void (^)(NSInteger btnIdx))buttonPressedBlock
+                        viewDismissedBlock:(void (^)())viewDismissedBlock
+{
+    ZHPopupView *popView = [ZHPopupView popupNomralAlertViewInView:view
+                                                   backgroundStyle:backgroundType
+                                                             title:title
+                                                           content:content
+                                                      buttonTitles:titles
+                                               confirmBtnTextColor:confirmBtnTextColor
+                                                 otherBtnTextColor:otherBtnTextColor
+                                                buttonPressedBlock:buttonPressedBlock];
+    
+    [popView setViewDismissedBlock:viewDismissedBlock];
+    
+    return popView;
 }
 
 + (instancetype)popupViewOnKeyWindow {
@@ -500,6 +550,10 @@
         return;
     }
     [self disappear];
+    
+    if (self.viewDismissedBlock != nil){
+        _viewDismissedBlock();
+    }
 }
 
 #pragma mark - View
