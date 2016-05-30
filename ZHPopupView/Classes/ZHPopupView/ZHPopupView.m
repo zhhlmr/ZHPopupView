@@ -28,7 +28,6 @@
 
 
 @interface ZHPopupView () {
-    
 }
 
 @property(nonatomic, strong) UIImageView *headIconImgView;
