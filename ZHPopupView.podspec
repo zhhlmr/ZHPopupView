@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "ZHPopupView"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "A simple iOS Pop up View to display alert or dialog"
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'ZHPopupView/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'ZHPopupView' => ['ZHPopupView/Assets/*.png']
   # }
