@@ -45,6 +45,8 @@
                                                       
                                                       
                                                   }];
+    
+    [popupView setContentTextAlignment:NSTextAlignmentCenter];
     [popupView present];
     
 }
