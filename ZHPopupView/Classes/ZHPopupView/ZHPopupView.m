@@ -254,6 +254,9 @@
     [_contentTextView setFrame:frame];
     [_contentTextView setTextContainerInset:UIEdgeInsetsZero];
     
+    
+    
+    
     //again adjust frame
     
     if (_contentTextView.text.length <= 0) {
@@ -269,17 +272,20 @@
         [self.container setFrame:frame];
     } else {
         
+        //has content
         //adjust button Area
         
+        CGFloat containerHeight = CGRectGetMaxY(_contentTextView.frame) + 20.0f;
         if (nil != _buttonArea) {
             frame = _buttonArea.frame;
             frame.origin.y = CGRectGetMaxY(_contentTextView.frame) + 25.0f;
             [_buttonArea setFrame:frame];
+            containerHeight = CGRectGetMaxY(_buttonArea.frame);
         }
         
         
         frame = self.container.frame;
-        frame.size.height = CGRectGetMaxY(_buttonArea.frame);
+        frame.size.height = containerHeight;//CGRectGetMaxY(_buttonArea.frame);
         frame.origin.y = self.frame.size.height / 2 - frame.size.height / 2;
         [self.container setFrame:frame];
     }

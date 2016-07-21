@@ -18,7 +18,6 @@
 
 #define kZHPopupView_HeadInterval 20.0f
 #define kZHPopupView_InsideLeftInterval 25.0f
-
 #define kZHPopupView_buttonDefaultHeight 40.0f
 
 #define COLOR_333333 [UIColor colorWithHexString:@"333333"]
