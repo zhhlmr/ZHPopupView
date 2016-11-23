@@ -31,7 +31,7 @@
 
 - (IBAction)pressedOnAlertViewPopup:(id)sender {
 
-    ZHPopupView *popupView = [ZHPopupView popupNomralAlertViewInView:nil
+    ZHPopupView *popupView = [ZHPopupView popupNormalAlertViewInView:nil
                                                      backgroundStyle:ZHPopupViewBackgroundType_SimpleOpacity
                                                                title:@"Tips"
                                                              content:@"Confirm to delete/remove?"
@@ -66,7 +66,7 @@
 
 - (IBAction)pressedOnBlurAlertViewPopup:(id)sender {
 
-    ZHPopupView *popupView = [ZHPopupView popupNomralAlertViewInView:nil
+    ZHPopupView *popupView = [ZHPopupView popupNormalAlertViewInView:nil
                                                      backgroundStyle:ZHPopupViewBackgroundType_Blur
                                                                title:@"Tips"
                                                              content:@"Confirm to delete/remove?"
