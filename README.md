@@ -20,7 +20,7 @@ A simple iOS Pop up View to display alert or dialog
 ###### Alert View
 
 ```
-ZHPopupView *popupView = [ZHPopupView popupNomralAlertViewInView:nil
+ZHPopupView *popupView = [ZHPopupView popupNormalAlertViewInView:nil
                                                  backgroundStyle:ZHPopupViewBackgroundType_SimpleOpacity
                                                            title:@"Tips"
                                                          content:@"Confirm to delete/remove?"

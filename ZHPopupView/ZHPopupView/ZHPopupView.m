@@ -102,7 +102,7 @@
     return popView;
 }
 
-+ (instancetype)popupNomralAlertViewInView:(UIView *)view backgroundStyle:(ZHPopupViewBackgroundType)backgroundType title:(NSString *)title content:(NSString *)content buttonTitles:(NSArray *)titles confirmBtnTextColor:(UIColor *)confirmBtnTextColor otherBtnTextColor:(UIColor *)otherBtnTextColor buttonPressedBlock:(void (^)(NSInteger btnIdx))buttonPressedBlock {
++ (instancetype)popupNormalAlertViewInView:(UIView *)view backgroundStyle:(ZHPopupViewBackgroundType)backgroundType title:(NSString *)title content:(NSString *)content buttonTitles:(NSArray *)titles confirmBtnTextColor:(UIColor *)confirmBtnTextColor otherBtnTextColor:(UIColor *)otherBtnTextColor buttonPressedBlock:(void (^)(NSInteger btnIdx))buttonPressedBlock {
     
     view = (nil == view) ?[UIApplication sharedApplication].keyWindow : view;
     ZHPopupView *popView = [[ZHPopupView alloc] initPopUpViewInView:view backgroundType:backgroundType];
