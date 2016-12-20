@@ -260,6 +260,37 @@
     
 }
 
++ (instancetype)popUpDialogWithCustomFontViewInView:(UIView *)view iconImg:(UIImage *)iconImg backgroundStyle:(ZHPopupViewBackgroundType)backgroundType title:(NSString *)title titleFont:(UIFont *)titleFont content:(NSString *)content contentFont:(UIFont *)contentFont buttonTitles:(NSArray *)titles confirmBtnTextColor:(UIColor *)confirmBtnTextColor confirmTitleFont:(UIFont *)confirmTitleFont otherBtnTextColor:(UIColor *)otherBtnTextColor otherBtnFont:(UIFont *)otherBtnFont buttonPressedBlock:(void (^)(NSInteger))buttonPressedBlock {
+    view = (nil == view) ?[UIApplication sharedApplication].keyWindow : view;
+    ZHPopupView *popView = [[ZHPopupView alloc] initPopUpViewInView:view backgroundType:backgroundType];
+    
+    
+    [view addSubview:popView];
+    
+    [popView setHeadIconImg:iconImg];
+    
+    [popView setHeadTitle:(nil == title) ? @"" : title];
+    
+    // Customize title font
+    if (titleFont) {
+        [popView setHeadTitleFont:titleFont];
+    }
+    
+    [popView setContent:(nil == content) ? @"" : content];
+    
+    // Customize content font
+    if (contentFont) {
+        [popView setContentTextFont:contentFont];
+    }
+    
+    [popView configureButtonWithTitles:titles confirmTitleColor:confirmBtnTextColor confirmTitleFont:confirmTitleFont otherTitleColor:otherBtnTextColor otherTitleFont:otherBtnFont];
+    
+    [popView setButtonPressedBlock:buttonPressedBlock];
+    
+    
+    return popView;
+}
+
 #pragma mark - Initialization
 
 - (void)_initialization {
@@ -329,6 +360,61 @@
     
 }
 
+- (void)configureButtonWithTitles:(NSArray *)titles confirmTitleColor:(UIColor *)confirmTitleColor confirmTitleFont:(UIFont *)confirmTitleFont otherTitleColor:(UIColor *)otherTitleColor otherTitleFont:(UIFont *)otherTitleFont {
+    if (nil == titles || titles.count <= 0) {
+        if(nil!=[self.buttonArea superview]) {
+            [self.buttonArea removeFromSuperview];
+        }
+        return;
+    }
+    
+    [[self.buttonArea subviews] enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
+    
+    
+    confirmTitleColor = (nil == confirmTitleColor) ? COLOR_MAINBLUE : confirmTitleColor;
+    otherTitleColor = (nil == otherTitleColor) ? COLOR_333333 : otherTitleColor;
+    
+    __block CGFloat perWidth = self.container.frame.size.width / titles.count;
+    
+    [titles enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx, BOOL *stop) {
+        if (nil == title || title.length <= 0) {
+            return;
+        }
+        
+        UIButton *btn = [self buttonWithTitle:title textColor:(idx == titles.count - 1) ? confirmTitleColor : otherTitleColor width:perWidth xPos:idx * perWidth yPos:0];
+        [btn setTag:idx + 233];
+        [btn addTarget:self action:@selector(pressedOnTitleButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.buttonArea addSubview:btn];
+        
+        // Add font custom in buttons
+        if (confirmTitleFont && idx == titles.count - 1) {
+            btn.titleLabel.font = confirmTitleFont;
+        } else if (otherTitleFont && idx != titles.count - 1) {
+            btn.titleLabel.font = otherTitleFont;
+        }
+        
+        if (idx != titles.count - 1) {
+            UIView *seperator = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btn.frame), CGRectGetMinY(btn.frame), 0.5f, btn.frame.size.height)];
+            [seperator setBackgroundColor:COLOR_E5E5E5];
+            [self.buttonArea addSubview:seperator];
+        }
+        
+    }];
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.container.frame.size.width, 0.5f)];
+    [line setBackgroundColor:COLOR_E5E5E5];
+    [self.buttonArea addSubview:line];
+    
+    if (nil == [self.buttonArea superview]) {
+        [self.container addSubview:self.buttonArea];
+    }
+    
+    [self layoutSubviews];
+    
+}
+
 - (UIButton *)buttonWithTitle:(NSString *)title textColor:(UIColor *)textColor width:(CGFloat)width xPos:(CGFloat)xPos yPos:(CGFloat)yPos {
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(xPos, yPos, width, 40.0f)];
@@ -355,6 +441,14 @@
     _contentTextAlignment = contentTextAlignment;
     
     [self.contentTextView setTextAlignment:contentTextAlignment];
+}
+
+- (void)setHeadTitleFont:(UIFont *)headTitleFont {
+    _headTitleFont = headTitleFont;
+    
+    [self.headTitleLbl setFont:headTitleFont];
+    
+    [self layoutSubviews];
 }
 
 - (void)setHeadTitleFontSize:(CGFloat)headTitleFontSize {
@@ -422,6 +516,12 @@
         
     }
     return _buttonArea;
+}
+
+-(void)setContentTextFont:(UIFont *)contentTextFont {
+    _contentTextFont = contentTextFont;
+    
+    _contentTextView.font = contentTextFont;
 }
 
 - (UIImageView *)headIconImgView {

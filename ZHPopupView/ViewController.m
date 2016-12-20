@@ -96,4 +96,19 @@
     [popupView present];
 }
 
+- (IBAction)pressedOnCustomButtonFontDialogViewPopup:(id)sender {
+    UIFont *titleFont = [UIFont fontWithName:@"ComicSansMS" size:15];
+    UIFont *buttonFont = [UIFont fontWithName:@"ComicSansMS" size:13];
+    UIFont *contentFont = [UIFont fontWithName:@"ComicSansMS" size:14];
+    
+    ZHPopupView *popupView = [ZHPopupView popUpDialogWithCustomFontViewInView:nil
+                                                        iconImg:[UIImage imageNamed:@"correct_icon"]
+                                                backgroundStyle:ZHPopupViewBackgroundType_Blur
+                                                                        title:@"Lorem Ipsum" titleFont:titleFont
+                                                                      content:kRandomText contentFont:contentFont
+                                                   buttonTitles:@[@"Cancel", @"Confirm"]
+                                                          confirmBtnTextColor:nil confirmTitleFont:buttonFont otherBtnTextColor:nil otherBtnFont:buttonFont buttonPressedBlock:nil];
+    [popupView present];
+}
+
 @end

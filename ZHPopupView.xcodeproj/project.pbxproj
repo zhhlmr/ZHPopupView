@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08DD3F841DF86AAE0099EC72 /* comic-sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08DD3F831DF86AAE0099EC72 /* comic-sans.ttf */; };
 		BA8BF3911CCF58C600D33062 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF3901CCF58C600D33062 /* main.m */; };
 		BA8BF3941CCF58C600D33062 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF3931CCF58C600D33062 /* AppDelegate.m */; };
 		BA8BF3971CCF58C600D33062 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF3961CCF58C600D33062 /* ViewController.m */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08DD3F831DF86AAE0099EC72 /* comic-sans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "comic-sans.ttf"; sourceTree = "<group>"; };
 		BA8BF38C1CCF58C600D33062 /* ZHPopupView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHPopupView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8BF3901CCF58C600D33062 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA8BF3921CCF58C600D33062 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		BA8BF38F1CCF58C600D33062 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08DD3F831DF86AAE0099EC72 /* comic-sans.ttf */,
 				BA8BF3901CCF58C600D33062 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -167,6 +170,7 @@
 				BA8BF39F1CCF58C600D33062 /* LaunchScreen.storyboard in Resources */,
 				BA8BF39C1CCF58C600D33062 /* Assets.xcassets in Resources */,
 				BA8BF39A1CCF58C600D33062 /* Main.storyboard in Resources */,
+				08DD3F841DF86AAE0099EC72 /* comic-sans.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
